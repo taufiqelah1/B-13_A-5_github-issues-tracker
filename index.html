@@ -34,5 +34,93 @@
 </head>
 <body>
     
+<!-- LOGIN PAGE -->
+  <main
+    id="login-page"
+    class="login-page flex items-center justify-center"
+  >
+    <section class="login-card card bg-base-100">
+      <header class="login-heading text-center">
+        <img
+          src="assets/github-logo.png"
+          class="login-logo"
+          width="100"
+          height="100"
+          alt="GitHub"
+        >
+
+        <h1>GitHub Issues Tracker</h1>
+        <p>Sign in to manage your issues</p>
+      </header>
+
+      <form id="login-form">
+        <div class="login-fields">
+          <div class="field">
+            <label for="username">Username</label>
+
+            <input
+              id="username"
+              class="input w-full"
+              type="text"
+              placeholder="Enter Username"
+              autocomplete="username"
+              required
+            >
+
+            <p class="field-hint">Default: admin</p>
+          </div>
+
+          <div class="field">
+            <label for="password">Password</label>
+
+            <input
+              id="password"
+              class="input w-full"
+              type="password"
+              placeholder="Enter Password"
+              autocomplete="current-password"
+              required
+            >
+
+            <p class="field-hint">Default: admin123</p>
+          </div>
+        </div>
+
+        <p
+          id="login-error"
+          class="login-error"
+          role="alert"
+          hidden
+        >
+          Incorrect username or password. Please try again.
+        </p>
+
+        <button
+          class="btn btn-primary sign-in w-full"
+          type="submit"
+        >
+          Sign In
+        </button>
+      </form>
+
+      <div class="or-divider">
+        <span></span>
+        OR
+        <span></span>
+      </div>
+
+      <div class="demo text-center">
+        <p>Demo Credentials:</p>
+
+        <div class="demo-box">
+          <p><strong>Username:</strong> admin</p>
+          <p><strong>Password:</strong> admin123</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+
 </body>
 </html>
