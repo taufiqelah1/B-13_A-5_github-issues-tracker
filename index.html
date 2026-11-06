@@ -163,7 +163,137 @@
       </form>
     </header>
 
-    
+     <main class="dashboard-container">
+      <!-- Filter buttons -->
+      <nav
+        class="filter-bar flex gap-2"
+        aria-label="Filter issues by status"
+      >
+        <button
+          class="btn filter-button active"
+          data-status="all"
+          aria-pressed="true"
+        >
+          All
+        </button>
+
+        <button
+          class="btn filter-button"
+          data-status="open"
+          aria-pressed="false"
+        >
+          Open
+        </button>
+
+        <button
+          class="btn filter-button"
+          data-status="closed"
+          aria-pressed="false"
+        >
+          Closed
+        </button>
+      </nav>
+
+      <section class="issues-panel" aria-labelledby="issue-count">
+        <!-- Issue count and status legend -->
+        <header class="issues-summary">
+          <div class="summary-main">
+            <span class="summary-icon">
+              <img
+                src="assets/Aperture.png"
+                width="32"
+                height="32"
+                alt=""
+              >
+            </span>
+
+            <div>
+              <h1 id="issue-count" aria-live="polite">0 Issues</h1>
+              <p>Track and manage your project issues</p>
+            </div>
+          </div>
+
+          <div class="legend">
+            <span>
+              <i
+                class="fa-solid fa-circle open-dot"
+                aria-hidden="true"
+              ></i>
+              Open
+            </span>
+
+            <span>
+              <i
+                class="fa-solid fa-circle closed-dot"
+                aria-hidden="true"
+              ></i>
+              Closed
+            </span>
+          </div>
+        </header>
+
+        <div class="issues-content">
+          <!-- Loading state -->
+          <div
+            id="loading-state"
+            class="feedback-state"
+            role="status"
+            hidden
+          >
+            <span
+              class="loading loading-spinner loading-lg"
+              aria-hidden="true"
+            ></span>
+
+            <p>Loading issues...</p>
+          </div>
+
+          <!-- Error state -->
+          <div
+            id="error-state"
+            class="feedback-state"
+            role="alert"
+            hidden
+          >
+            <i
+              class="fa-solid fa-circle-exclamation"
+              aria-hidden="true"
+            ></i>
+
+            <h2>Unable to load issues</h2>
+            <p>Please check your connection and try again.</p>
+
+            <button id="retry-button" class="btn btn-primary">
+              Try again
+            </button>
+          </div>
+
+          <!-- Empty state -->
+          <div
+            id="empty-state"
+            class="feedback-state"
+            hidden
+          >
+            <i
+              class="fa-solid fa-magnifying-glass"
+              aria-hidden="true"
+            ></i>
+
+            <h2>No issues found</h2>
+            <p>Try another search or choose a different tab.</p>
+          </div>
+
+          <!-- Issue cards are added here -->
+          <div
+            id="issues-grid"
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3"
+          ></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  
 
 
 
